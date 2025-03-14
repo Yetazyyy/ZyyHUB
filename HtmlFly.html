@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roblox Fly Script</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 400px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+        }
+        .header {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .watermark {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 18px;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+        .button.off {
+            background-color: #f44336;
+        }
+        .controls {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .back-btn, .close-btn {
+            background-color: #555;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .back-btn {
+            background-color: #008CBA;
+        }
+        .close-btn {
+            background-color: #f44336;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="watermark">ZyyHUB</div>
+    <div class="header">Roblox Fly Script</div>
+    <button id="flyButton" class="button off">Fly: OFF</button>
+    <div class="controls">
+        <button class="back-btn" onclick="goBack()">Back</button>
+        <button class="close-btn" onclick="closeWindow()">Close</button>
+    </div>
+</div>
+
+<script>
+    // Fly Mode State
+    let isFlying = false;
+
+    // Fly Button Toggle
+    const flyButton = document.getElementById('flyButton');
+    flyButton.addEventListener('click', () => {
+        isFlying = !isFlying;
+        if (isFlying) {
+            flyButton.textContent = 'Fly: ON';
+            flyButton.classList.remove('off');
+        } else {
+            flyButton.textContent = 'Fly: OFF';
+            flyButton.classList.add('off');
+        }
+    });
+
+    // Close Window function
+    function closeWindow() {
+        window.close();
+    }
+
+    // Back Button Function
+    function goBack() {
+        window.history.back();
+    }
+</script>
+
+</body>
+</html>
